@@ -5,6 +5,19 @@
 
 // Color system
 
+// --- Custom BTCPay
+$btcpay-accent-light: #CEDC21;
+$btcpay-accent-medium: #51B13E;
+$btcpay-accent-dark: #137547;
+
+$btcpay-neutral-100: #FBFAF8;
+$btcpay-neutral-200: #F5F5F3;
+$btcpay-neutral-300: #E5E5E5;
+$btcpay-neutral-600: #536E8D;
+$btcpay-neutral-700: #465C76;
+$btcpay-neutral-900: #202C39;
+
+// Bootstrap
 $white:    #fff;
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
@@ -39,9 +52,9 @@ $indigo:  #6610f2;
 $purple:  #6f42c1;
 $pink:    #e83e8c;
 $red:     #dc3545;
-$orange:  #fd7e14;
+$orange:  #ff6f27;
 $yellow:  #ffc107;
-$green:   #28a745;
+$green:   $btcpay-accent-dark;
 $teal:    #20c997;
 $cyan:    #17a2b8;
 
@@ -60,20 +73,20 @@ $colors: map-merge(
     "teal":       $teal,
     "cyan":       $cyan,
     "white":      $white,
-    "gray":       $gray-600,
-    "gray-dark":  $gray-800
+    "gray":       $btcpay-neutral-600,
+    "gray-dark":  $btcpay-neutral-900
   ),
   $colors
 );
 
-$primary:       $blue;
+$primary:       $green;
 $secondary:     $gray-600;
 $success:       $green;
 $info:          $cyan;
-$warning:       $yellow;
+$warning:       $orange;
 $danger:        $red;
-$light:         $gray-100;
-$dark:          $gray-800;
+$light:         $btcpay-neutral-100;
+$dark:          $btcpay-neutral-900;
 
 $theme-colors: ();
 // stylelint-disable-next-line scss/dollar-variable-default
