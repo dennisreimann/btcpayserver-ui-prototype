@@ -8,7 +8,9 @@
   "scripts": {
     "start": "npm-run-all -p start:*",
     "start:patternlib": "uiengine build --serve --watch",
-    "start:build": "node-sass --watch --recursive src/styles/index.scss src/static/bootstrap/bootstrap.css"
+    "start:build": "npm-run-all -p build:*",
+    "build:bootstrap": "node-sass --watch --recursive src/styles/index.scss src/static/bootstrap/bootstrap.css",
+    "build:variables": "node-sass --watch --recursive src/styles/root.scss src/static/custom/btcpay-theme.css"
   },
   "keywords": [
     "BTCPayServer"

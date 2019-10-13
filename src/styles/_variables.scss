@@ -1,3 +1,9 @@
+/*
+ * This file overrides the bootstrap variables with CSS custom properties
+ * that get defined in the root.scss file. Every variable we want to edit
+ * we need to set to a `--btcpay-` custom property and set it in the root.
+ */
+
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -5,29 +11,17 @@
 
 // Color system
 
-// --- Custom BTCPay
-$btcpay-accent-light: #CEDC21;
-$btcpay-accent-medium: #51B13E;
-$btcpay-accent-dark: #137547;
-
-$btcpay-neutral-100: #FBFAF8;
-$btcpay-neutral-200: #F5F5F3;
-$btcpay-neutral-300: #E5E5E5;
-$btcpay-neutral-600: #536E8D;
-$btcpay-neutral-700: #465C76;
-$btcpay-neutral-900: #202C39;
-
 // Bootstrap
 $white:    #fff;
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #6c757d;
-$gray-700: #495057;
-$gray-800: #343a40;
-$gray-900: #212529;
+$gray-100: var(--btcpay-color-gray-100);
+$gray-200: var(--btcpay-color-gray-200);
+$gray-300: var(--btcpay-color-gray-300);
+$gray-400: var(--btcpay-color-gray-400);
+$gray-500: var(--btcpay-color-gray-500);
+$gray-600: var(--btcpay-color-gray-600);
+$gray-700: var(--btcpay-color-gray-700);
+$gray-800: var(--btcpay-color-gray-800);
+$gray-900: #212529; // var(--btcpay-color-gray-900);
 $black:    #000;
 
 $grays: ();
@@ -47,16 +41,16 @@ $grays: map-merge(
   $grays
 );
 
-$blue:    #0069d9;
-$indigo:  #6610f2;
-$purple:  #6f42c1;
-$pink:    #e83e8c;
-$red:     #dc3545;
-$orange:  #ff6f27;
-$yellow:  #ffc107;
-$green:   $btcpay-accent-dark;
-$teal:    #20c997;
-$cyan:    #17a2b8;
+$blue:    var(--btcpay-color-blue);
+$indigo:  var(--btcpay-color-indigo);
+$purple:  var(--btcpay-color-purple);
+$pink:    var(--btcpay-color-pink);
+$red:     var(--btcpay-color-red);
+$orange:  var(--btcpay-color-orange);
+$yellow:  var(--btcpay-color-yellow);
+$green:   var(--btcpay-color-green);
+$teal:    var(--btcpay-color-teal);
+$cyan:    var(--btcpay-color-cyan);
 
 $colors: ();
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -73,20 +67,20 @@ $colors: map-merge(
     "teal":       $teal,
     "cyan":       $cyan,
     "white":      $white,
-    "gray":       $btcpay-neutral-600,
-    "gray-dark":  $btcpay-neutral-900
+    "gray":       $gray-100,
+    "gray-dark":  $gray-800
   ),
   $colors
 );
 
-$primary:       $green;
-$secondary:     $gray-600;
-$success:       $green;
-$info:          $cyan;
-$warning:       $orange;
-$danger:        $red;
-$light:         $btcpay-neutral-100;
-$dark:          $btcpay-neutral-900;
+$primary:       #0069d9; // var(--btcpay-color-primary);
+$secondary:     #6c757d; // var(--btcpay-color-secondary);
+$success:       #28a745; // var(--btcpay-color-success);
+$info:          #17a2b8; // var(--btcpay-color-info);
+$warning:       #ffc107; // var(--btcpay-color-warning);
+$danger:        #dc3545; // var(--btcpay-color-danger);
+$light:         #f8f9fa; // var(--btcpay-color-light);
+$dark:          #343a40; // var(--btcpay-color-dark);
 
 $theme-colors: ();
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -174,17 +168,17 @@ $sizes: map-merge(
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   $white;
-$body-color:                $gray-900;
+$body-bg:                   var(--btcpay-bg-body);
+$body-color:                var(--btcpay-color-body);
 
 
 // Links
 //
 // Style anchor elements.
 
-$link-color:                              theme-color("primary");
+$link-color:                              var(--btcpay-color-link);
 $link-decoration:                         none;
-$link-hover-color:                        darken($link-color, 15%);
+$link-hover-color:                        var(--btcpay-color-link-hover);
 $link-hover-decoration:                   underline;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 $emphasized-link-hover-darken-percentage: 15%;
@@ -283,8 +277,8 @@ $embed-responsive-aspect-ratios: join(
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-sans-serif:      var(--btcpay-font-family-base);
+$font-family-monospace:       var(--btcpay-font-family-monospace);
 $font-family-base:            $font-family-sans-serif;
 // stylelint-enable value-keyword-case
 
@@ -378,7 +372,7 @@ $table-dark-bg:               $gray-800;
 $table-dark-accent-bg:        rgba($white, .05);
 $table-dark-hover-color:      $table-dark-color;
 $table-dark-hover-bg:         rgba($white, .075);
-$table-dark-border-color:     lighten($table-dark-bg, 7.5%);
+$table-dark-border-color:     $gray-700;
 $table-dark-color:            $white;
 
 $table-striped-order:         odd;

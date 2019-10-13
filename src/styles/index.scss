@@ -8,7 +8,11 @@
 
 @import "../../node_modules/bootstrap/scss/mixins";
 
-@import "_root";
+/*
+ * Skip the _root import -> we generate a separate file from that, so that we can
+ * easily swap the variables and have separate files for separate themes.
+ */
+// @import "_root";
 
 @import "../../node_modules/bootstrap/scss/reboot";
 @import "../../node_modules/bootstrap/scss/type";
