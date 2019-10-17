@@ -1,6 +1,9 @@
 name: Node CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -8,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [12]
 
     steps:
     - uses: actions/checkout@v1
@@ -16,10 +19,18 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
+    - name: Install and build
       run: |
         npm ci
         npm run build
-        npm test --if-present
+        # https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/
+        touch dist/.nojekyll
+        # https://help.github.com/en/articles/managing-a-custom-domain-for-your-github-pages-site
+        echo btcpay.uix.space > dist/CNAME
       env:
         CI: true
+    - name: GitHub Pages Deploy
+      uses: maxheld83/ghpages@v0.2.1
+      env:
+        BUILD_DIR: dist/
+        GH_PAT: ${{ secrets.GH_PAT }}

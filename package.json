@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rimraf dist && mkdir dist",
     "start": "npm run clean && npm-run-all -p 'build:* -- --serve --watch'",
-    "build": "npm run clean && cp -r src/static dist && npm-run-all -p 'build:*'",
+    "build": "npm run clean && cp -r src/static dist && NODE_ENV=production npm-run-all -p 'build:*'",
     "build:patternlib": "uiengine build",
     "build:bootstrap": "node-sass --recursive src/styles/index.scss src/static/bootstrap/bootstrap_build.css",
     "build:variables": "node-sass --recursive src/styles/root.scss src/static/custom/btcpay-theme.css"

@@ -2,6 +2,13 @@
 
 > Developers on brink of second UI for BTCPay
 
+## 👀 Sneak Peek
+
+![Node CI](https://github.com/dennisreimann/btcpayserver-ui-prototype/workflows/Node%20CI/badge.svg)
+
+[Pattern Library](https://btcpay.uix.space/) |
+[Homepage](https://btcpay.uix.space/_variants/_default/Home/Home.html-1.html)
+
 ## 📦 Setup
 
 Dependencies are managed via npm.
