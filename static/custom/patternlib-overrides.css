@@ -1,0 +1,29 @@
+/*
+  You most likely want to configure the accent colors to fit your needs.
+  For a full reference of available custom properties see this file:
+  https://github.com/dennisreimann/uiengine/blob/master/packages/ui/src/styles/base/settings.styl
+*/
+:root {
+  --uie-color-accent-extralight: #CEDC21;
+  --uie-color-accent-light: #CEDC21;
+  --uie-color-accent-medium: #51B13E;
+  --uie-color-accent-middark: #1E7A44;
+  --uie-color-accent-dark: #202C39;
+
+  --uie-color-neutral-0: #FFF;
+  --uie-color-neutral-10: #F4F5F5;
+  --uie-color-neutral-20: #EEEEEE;
+  --uie-color-neutral-50: #9E9E9E;
+  --uie-color-neutral-70: #757575;
+  --uie-color-neutral-80: #424242;
+  --uie-color-neutral-90: #333;
+  --uie-color-neutral-100: #000;
+
+  --uie-color-topbar-bg: var(--uie-color-accent-dark);
+
+  --uie-color-navigation-bg: var(--uie-color-bg-light);
+  --uie-color-navigation-text: var(--uie-color-neutral-90);
+  --uie-color-navigation-text-hover: var(--uie-color-neutral-100);
+  --uie-color-navigation-bg-subnav: var(--uie-color-bg-medium);
+  --uie-color-navigation-text-subnav: var(--uie-color-neutral-100);
+}
