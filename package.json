@@ -11,7 +11,8 @@
     "build": "npm run clean && cp -r src/static dist && NODE_ENV=production npm-run-all -p 'build:*'",
     "build:patternlib": "uiengine build",
     "build:bootstrap": "node-sass --recursive src/styles/index.scss src/static/bootstrap/bootstrap_build.css",
-    "build:variables": "node-sass --recursive src/styles/root.scss src/static/custom/btcpay-theme.css"
+    "build:variables": "node-sass --recursive src/styles/root.scss src/static/custom/btcpay-theme.css",
+    "postbuild": "node ./update_generated_bootstrap_css.js"
   },
   "keywords": [
     "BTCPayServer"
